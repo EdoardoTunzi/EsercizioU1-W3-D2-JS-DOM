@@ -157,19 +157,31 @@
         //firstUl.remove(); AVEVO PENSATO DI UTILIZZARE REMOVE MA L'ESERCIZIO CHIEDE DI FARLO SCOMPARIRE E NON DI ELIMINARLO, QUINDI HO PENSATO DI USARE COME IN CSS, IL DISPLAY NONE.
         firstUl.style.display = "none";
       };
-      hideFirstUl();
+      //hideFirstUl();
 
       /* ESERCIZIO 8
          Scrivi una funzione che renda verde il background di ogni lista non ordinata
         */
 
-      const paintItGreen = function () {};
+      const paintItGreen = function () {
+        const allUl = document.querySelectorAll("ul");
+        allUl.forEach((ul) => {
+          ul.style.backgroundColor = "green";
+        });
+      };
+      paintItGreen();
 
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
-      const makeItClickable = function () {};
+      const makeItClickable = function () {
+        const h1 = document.querySelector("h1");
+        h1.onclick = function () {
+          h1.innerText = h1.innerText.slice(0, -1);
+        };
+      };
+      makeItClickable();
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
